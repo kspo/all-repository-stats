@@ -19,7 +19,7 @@ jobs:
         run: |
           curl --user "${{ github.actor }}:${{ secrets.SECRET_TOKEN }}" \
             -H "Accept: application/vnd.github.v3+json" \
-            https://api.github.com/repos/${{ github.repository }}/traffic/clones \
+            https://api.github.com/repos/kspo/super_cupertino_navigation_bar/traffic/clones \
             > clone.json
 
       - name: create gist and download previous count
@@ -51,7 +51,7 @@ jobs:
           if [ ! -f CLONE.md ]; then
             shields="https://img.shields.io/badge/dynamic/json?color=success&label=Clone&query=count&url="
             url="https://gist.githubusercontent.com/${{ github.actor }}/${{ steps.set_id.outputs.GIST }}/raw/clone.json"
-            repo="https://github.com/kspo/crypto-coins-square-icons"
+            repo="https://github.com/kspo/all-repository-stats"
             echo ''> CLONE.md
             echo '
             **Markdown**
